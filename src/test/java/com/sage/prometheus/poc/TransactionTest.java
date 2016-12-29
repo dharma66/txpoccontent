@@ -4,7 +4,6 @@ package com.sage.prometheus.poc;
 import org.junit.Test;
 
 import java.math.BigDecimal;
-import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -12,10 +11,6 @@ import java.util.List;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
-
-/**
- * Created by phil on 16/12/16.
- */
 public class TransactionTest
 {
     @Test
