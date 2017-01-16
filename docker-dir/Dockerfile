@@ -1,3 +1,5 @@
-FROM tomcat:8-jre8-alpine
-COPY tomcat-users.xml /usr/local/tomcat/conf/tomcat-users.xml
-COPY content_provider.war /usr/local/tomcat/webapps/content.war
+FROM openjdk
+ADD content_provider-0.0.1-SNAPSHOT.jar app.jar
+RUN sh -c 'touch /app.jar'
+ENV JAVA_OPTS=""
+ENTRYPOINT [ "sh", "-c", "java $JAVA_OPTS -Djava.security.egd=file:/dev/./urandom -jar /app.jar" ]
