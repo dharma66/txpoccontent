@@ -1,0 +1,23 @@
+version: '2'
+services:
+  content:
+    image: content_service:latest
+    ports:
+      - '8080:8080'
+    environment:
+      STORE_HOST: store
+    links:
+      - store
+  worker:
+    image: worker_service:latest
+    links:
+      - content
+      - store
+      - queue
+  queue:
+    image: rabbitmq:3.5.0-management
+    ports:
+      - '5672:5672'
+      - '15672:15672'
+  store:
+    image: mongo:3.4.1
