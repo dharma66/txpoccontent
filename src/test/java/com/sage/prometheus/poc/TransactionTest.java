@@ -1,6 +1,5 @@
 package com.sage.prometheus.poc;
 
-
 import org.junit.Test;
 
 import java.math.BigDecimal;
