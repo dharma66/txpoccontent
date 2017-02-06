@@ -19,6 +19,6 @@ public class AppConfig extends AbstractMongoConfiguration
     @Override
     public Mongo mongo() throws Exception
     {
-        return new MongoClient(/*"store"*/);
+        return new MongoClient(); // set connection host name here for docker
     }
 }
