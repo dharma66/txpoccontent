@@ -2,6 +2,7 @@ package com.sage.prometheus.poc;
 
 import com.mongodb.Mongo;
 import com.mongodb.MongoClient;
+import com.mongodb.MongoClientOptions;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.mongodb.config.AbstractMongoConfiguration;
 import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
@@ -19,6 +20,6 @@ public class AppConfig extends AbstractMongoConfiguration
     @Override
     public Mongo mongo() throws Exception
     {
-        return new MongoClient(/*"store"*/);
+        return new MongoClient("store", MongoClientOptions.builder().connectionsPerHost(250).build());
     }
 }

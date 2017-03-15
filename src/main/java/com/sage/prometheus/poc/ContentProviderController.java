@@ -41,4 +41,10 @@ public class ContentProviderController
 
         return entries;
     }
+
+    @RequestMapping(value = "/transactions")
+    public Iterable<Transaction> transactions()
+    {
+        return repo.findAll();
+    }
 }
